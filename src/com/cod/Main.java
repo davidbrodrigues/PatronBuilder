@@ -1,13 +1,31 @@
 package com.cod;
 
+import static com.cod.Pizzas.*;
+
 public class Main {
 
     public static void main(String[] args) {
-        Pizzas margarita=new Pizzas("normal", false, 1, true, false, "solo tomate", false, false, false, false, false);
-        System.out.println(margarita.toString());
-        Pizzas prosciuttofunghi=new Pizzas("pan", false, 2, true, false, "solo tomate", true, true, false, true, true);
-        System.out.println(prosciuttofunghi.toString());
-        Pizzas barbacoa=new Pizzas("finisima", true, 1, true, true, "barbacoa", false, true, false, false, true);
-        System.out.println(barbacoa.toString());
+        /*
+        Pizzas basica = new Pizzas();
+        Pizzas napolitana = new Pizzas(Pizzas.FINA, Pizzas.GRANDE, Pizzas.BARBACOA, true, false, false, true, true, Pizzas.PARALLEVAR);
+        System.out.println(basica.toString());
+        System.out.println(napolitana.toString());
+         */
+        /*
+        //instancio el builder
+        PizzaBuilder miBuilder = new PizzaBuilder();
+        PizzaBuilder miBuilder2 = miBuilder.setTipoMasa(PAN);
+        PizzaBuilder miBuilder3 = miBuilder2.setSize(PEQUEÑA);
+        //construyo la pizza
+        Pizzas creadaConBuilder = miBuilder.build();
+         */
+
+        //como los metodos de la clase PizzaBuilder me devuelven un objeto de tipo builder puedo encadenar metodo tras metodo y
+        //el .build() me devuelve una Pizza puedo recoger la pizza final de una vez.
+        Pizzas miPizza = new PizzaBuilder()
+                .setTipoMasa(FINA)
+                .setSize(GRANDE)
+                .build();
+        System.out.println(miPizza.toString());
     }
 }
