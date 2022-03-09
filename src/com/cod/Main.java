@@ -27,5 +27,11 @@ public class Main {
                 .setSize(GRANDE)
                 .build();
         System.out.println(miPizza.toString());
+
+        Pizzas miPizza2 = new PizzaBuilder()
+                .setTipoMasa(PAN)
+                .setSize(MEDIANA)
+                .build();
+        System.out.println(miPizza2.toString());
     }
 }
